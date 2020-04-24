@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="fomav" />
+  
+  
+  <title>付梦威的个人博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Hexo" />
+  
+
+  
+  <meta name="description" content="付梦威的个人博客">
+
+  
+
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+    <script src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+  
+
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"P6FMULnoX3XK5edMk42DKgly-MdYXbMMI","appkey":"n2xKTKuwdQ5uQgP8L2FqjMKG","comment":true,"count":true},
+    welcome: {"enable":false,"interval":30},
+    start_time: "2019-04-24",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: false,
+    lock: false,
+    author: "fomav",
+    share: {"twitter":false,"facebook":false,"weibo":false,"qq":false,"wechat":false},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  
+<script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+
+  
+    
+<link rel="stylesheet" href="/css/myStyle.css">
+
+  
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">fomav</a>
+      </span>
+    
+    
+      <span class="site-header-brand-motto"> | 万般皆下品，唯有代码高</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/fmwalways" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      <div class="home">
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2019-06-21
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2019/06/21/Linux-%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/">Linux 防火墙端口设置</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              
+            
+          </div>
+          <a class="home-article-read" href="/2019/06/21/Linux-%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/">
+            READ MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/Linux/"><i class="fa fa-tags"></i>Linux</a>
+             
+              <a href="/tags/%E7%AB%AF%E5%8F%A3/"><i class="fa fa-tags"></i>端口</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2019-06-19
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2019/06/19/Flutter%E5%85%A5%E9%97%A8%E4%B9%8BMacOS-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">Flutter入门之MacOS 开发环境搭建</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              <p>距离上一次谷歌开发者大会已经过去了两个月的时间，大会上推出了<strong>Android Q</strong>、<strong>Flutter Web</strong>开发支持以及一些其他方面的东西，作为<strong>Android</strong>开发出身的我<strong>Flutter</strong>产生了极为浓厚的兴趣，<strong>Dart</strong>语言作为<strong>Flutter</strong>开发语言，让我对同样采用此语言<strong>Google</strong>为了万物互联开发的<strong>Fuchsia</strong>系统也充满了期待，于是在空闲时间就开始了此番环境的部署。</p>
+            
+          </div>
+          <a class="home-article-read" href="/2019/06/19/Flutter%E5%85%A5%E9%97%A8%E4%B9%8BMacOS-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+            READ MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/Flutter/"><i class="fa fa-tags"></i>Flutter</a>
+             
+              <a href="/tags/MacOS/"><i class="fa fa-tags"></i>MacOS</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2019-05-10
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2019/05/10/%E4%BF%AE%E5%A4%8DWindows-Linux-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E5%B7%AE/">修复Windows Linux 双系统时间差</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              <p>装了双系统之后启动Windows后会有8个小时的时间差（北京时区），这是因为Linux在开机时候写入主板的时间的是有时区的时间，Windows开机后直接拿来用不包含时区，就造成了时间差。</p>
+            
+          </div>
+          <a class="home-article-read" href="/2019/05/10/%E4%BF%AE%E5%A4%8DWindows-Linux-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E5%B7%AE/">
+            READ MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/Linux/"><i class="fa fa-tags"></i>Linux</a>
+             
+              <a href="/tags/Windows/"><i class="fa fa-tags"></i>Windows</a>
+             
+              <a href="/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/"><i class="fa fa-tags"></i>双系统</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2019-05-09
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2019/05/09/%E7%94%B3%E8%AF%B7-Let-s-Encrypt-%E9%80%9A%E9%85%8D%E7%AC%A6htps%E8%AF%81%E4%B9%A6/">申请 Let's Encrypt 通配符Https证书</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              <p>之前忘记续费的域名结果被别人抢注了，无奈申请了cn后缀的域名，利用零零星星的时间还是把博客搭建起来了。之前搭建好了之后一直没有经历去维护他，以后应该会抽空维护下去了，可能不光光是技术性的东西，个人生活也会记录在这上边。闲话不多说，让我们开始此文的主题吧。</p>
+            
+          </div>
+          <a class="home-article-read" href="/2019/05/09/%E7%94%B3%E8%AF%B7-Let-s-Encrypt-%E9%80%9A%E9%85%8D%E7%AC%A6htps%E8%AF%81%E4%B9%A6/">
+            READ MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/https/"><i class="fa fa-tags"></i>https</a>
+             
+              <a href="/tags/%E5%9F%9F%E5%90%8D/"><i class="fa fa-tags"></i>域名</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2017-08-18
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2017/08/18/GitHub-pages-%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/">GitHub pages 搭建Hexo博客教程</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              <p>之前买的服务器到期了，每个月续费感觉有点麻烦，索性就用了Github pages搭建Hexo博客，有考虑过用oschina的pages而且oschina上面可以创建私有仓库，但找了好久没有看到CHAME服务，这个想法也就做罢了。</p>
+<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><ul>
+<li>Node.js环境配置</li>
+<li>Github的账户配置</li>
+<li>Hexo环境配置</li>
+</ul>
+<h3 id="配置Node-js"><a href="#配置Node-js" class="headerlink" title="配置Node.js"></a>配置Node.js</h3><p>  1.下载node.js<br>      <a href="https://nodejs.org/dist/v8.4.0/node-v8.4.0-x86.msi" target="_blank" rel="noopener">Windows installer 32-bit</a><br>      <a href="https://nodejs.org/dist/v8.4.0/node-v8.4.0-x64.msi" target="_blank" rel="noopener">Windows installer 64-bit</a><br>这里提供了Windows平台的快捷下载，下载其他版本的Node.js<a href="https://nodejs.org/zh-cn/download/current/" target="_blank" rel="noopener">点此</a></p>
+<p>  2.下载完成之后就可以安装了，如果不需要更改安装目录的话，一路Next就可以了，最后我们通过命令行检查一下是否安装成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">v6.9.5</span><br><span class="line"></span><br><span class="line">npm -v</span><br><span class="line">3.10.10</span><br></pre></td></tr></table></figure>
+            
+          </div>
+          <a class="home-article-read" href="/2017/08/18/GitHub-pages-%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/">
+            READ MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/Hexo/"><i class="fa fa-tags"></i>Hexo</a>
+             
+              <a href="/tags/GitHub-pages/"><i class="fa fa-tags"></i>GitHub pages</a>
+             
+              <a href="/tags/%E5%8D%9A%E5%AE%A2/"><i class="fa fa-tags"></i>博客</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+    <div class="home-article-wrapper clearfix">
+      <div class="home-article" data-cover="false">
+        <div class="home-article-inner" data-cover="false">
+          <div class="passage-meta">
+            <span>
+              <i class="fa fa-calendar"></i>2017-02-13
+            </span>
+            
+            
+              <span>
+                | <i class="fa fa-unlock-alt"></i>UNLOCK
+              </span>
+            
+          </div>
+          <h1 class="home-article-title">
+            <a href="/2017/02/13/%E5%9F%BA%E4%BA%8EVps%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">Hexo博客搭建以及爬坑过程</a>
+          </h1>
+          <div class="home-article-content passage-article">
+            
+              <p>此篇博客讲述了我从构想搭建博客以及搭建过程中遇到的问题以及爬坑教程..</p>
+<p><strong>一、构想和规划</strong></p>
+<p>大概16年11月份时候，那个时候在找工作，平常的时候就写一些代码什么的，在网上翻录别人博客的时候心里就在想什么时候能有个自己私人的博客，这个想法越来越不可收拾，心里一想，那就搞呗。于是乎这篇博文就这样诞生了。大概前前后后历经3个月的时间吧，从服务器到域名，由于用的国内的域名以及DNS，免不了备案一番，其实真正花在这个时间也不多，总的算下来也就几天的时间。停摆一阵弄一阵，看到现在的多域名全站https的博客，回头过来不免感慨一番，现在想想还是挺有意思的一件事情。</p>
+            
+          </div>
+          <a class="home-article-read" href="/2017/02/13/%E5%9F%BA%E4%BA%8EVps%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/">
+            READ MORE >>>
+          </a>
+          
+            <div class="passage-tags">
+             
+              <a href="/tags/Hexo/"><i class="fa fa-tags"></i>Hexo</a>
+             
+              <a href="/tags/%E5%8D%9A%E5%AE%A2/"><i class="fa fa-tags"></i>博客</a>
+            
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  
+</div>
+    </main>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+       <!-- 
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Google</a>
+        </div>
+        -->
+        <input type="text" class="st-default-search-input" id="local-search-input" results="0">
+        <i class="fa fa-search"></i>
+      </div>
+      
+        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+          
+            <div>
+              <img src="/images/wechat.png" alt="WeChat">
+              
+                <p>WeChat</p>
+              
+            </div>
+          
+            <div>
+              <img src="/images/alipay.png" alt="AliPay">
+              
+                <p>AliPay</p>
+              
+            </div>
+          
+        </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+<!--搜索列表-->
+    <div data-v-357a65ed="" class="fav_list_box site-layer-body">
+        <div  class="my_fav_con" id="site_search">
+            <div id="local-search-result"></div>
+        </div>
+    </div>
+<!--搜索列表-->
+  </div>
+</div>
+
+
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="javascript:void(0);" data-enable="false">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="javascript:void(0);" data-enable="false">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="false" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+      <a href="javascript:void(0);" data-enable="false">
+        <i class="fa fa-commenting"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+      <a href="javascript:void(0);" id="site-reward">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+  
+  
+  
+  
+</div>
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+  <script async>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '');
+  </script>
+
+
+
+  <script async>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+
+
+
+
+    
+      
+<script src="/js/fancybox.js"></script>
+
+    
+  </body>
+</html>

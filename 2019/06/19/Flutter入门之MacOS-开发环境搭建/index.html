@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="fomav" />
+  
+  
+  <title>Flutter入门之MacOS 开发环境搭建 | 付梦威的个人博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Flutter,MacOS," />
+  
+
+  
+  <meta name="description" content="距离上一次谷歌开发者大会已经过去了两个月的时间，大会上推出了Android Q、Flutter Web开发支持以及一些其他方面的东西，作为Android开发出身的我Flutter产生了极为浓厚的兴趣，Dart语言作为Flutter开发语言，让我对同样采用此语言Google为了万物互联开发的Fuchsia系统也充满了期待，于是在空闲时间就开始了此番环境的部署。">
+
+  
+
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+    <script src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+  
+
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"P6FMULnoX3XK5edMk42DKgly-MdYXbMMI","appkey":"n2xKTKuwdQ5uQgP8L2FqjMKG","comment":true,"count":true},
+    welcome: {"enable":false,"interval":30},
+    start_time: "2019-04-24",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "fomav",
+    share: {"twitter":false,"facebook":false,"weibo":false,"qq":false,"wechat":false},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  
+<script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+
+  
+    
+<link rel="stylesheet" href="/css/myStyle.css">
+
+  
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">fomav</a>
+      </span>
+    
+    
+      <span class="site-header-brand-motto"> | 万般皆下品，唯有代码高</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/fmwalways" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2019-06-19
+    </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    Flutter入门之MacOS 开发环境搭建
+  </h1>
+  
+  <article class="passage-article">
+    <h2 id="主要步骤"><a href="#主要步骤" class="headerlink" title="主要步骤"></a>主要步骤</h2><ol>
+<li>获取Flutter SDK</li>
+<li>添加环境变量</li>
+<li>完成Flutter依赖配置</li>
+<li>新建安装Flutter项目</li>
+</ol>
+<h1 id="1-获取Flutter-SDK"><a href="#1-获取Flutter-SDK" class="headerlink" title="1. 获取Flutter SDK"></a>1. 获取Flutter SDK</h1><p>在<strong>Flutter</strong>官网下载当前平台可用的安装包，我在<strong>Mac</strong>环境下载的是Mac的安装包。 <a href="https://flutter.dev/docs/development/tools/sdk/releases" target="_blank" rel="noopener">官网下载链接</a></p>
+<p>请根据当前平台下载合适的安装包，如果官网链接不可用可以去<strong>Flutter GitHub</strong>项目下载。<a href="https://github.com/flutter/flutter/releases" target="_blank" rel="noopener">GitHub下载链接</a></p>
+<h1 id="2-添加环境变量"><a href="#2-添加环境变量" class="headerlink" title="2. 添加环境变量"></a>2. 添加环境变量</h1><p>解压刚才下载好的安装包并且移动到合适的位置，然后添加<strong>Flutter SDK</strong>环境变量以使用<strong>flutter</strong>命令行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH&#x3D;&#96;Flutter_DIR&#96;&#x2F;bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>其中<strong>Flutter_DIR</strong>为<strong>Flutter SDK</strong>所在的文件夹路径，由于众所周知的原因，<strong>Flutter</strong>依赖包服务在中国大陆地区的服务可能不可用，大家也可以添加以下环境变量添加国内镜像源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export PUB_HOSTED_URL&#x3D;https:&#x2F;&#x2F;pub.flutter-io.cn</span><br><span class="line">export FLUTTER_STORAGE_BASE_URL&#x3D;https:&#x2F;&#x2F;storage.flutter-io.cn</span><br></pre></td></tr></table></figure>
+<p>更改了环境变量文件之后可能需要重启或者注销一下计算机，非即时生效。</p>
+<h1 id="3-完成Flutter-依赖配置"><a href="#3-完成Flutter-依赖配置" class="headerlink" title="3. 完成Flutter 依赖配置"></a>3. 完成Flutter 依赖配置</h1><p>如果上面一切正常的话就可以使用<strong>flutter</strong>命令行了，我们可以使用以下命令检查我们的依赖项是否安装完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
+<p>如果你像我一样需要同时在<strong>iOS</strong>和<strong>Android</strong>平台开发，那么就要同时装<strong>AndroidStudio</strong>和<strong>XCode</strong>，如果仅仅开发<strong>Android</strong>平台，那么<strong>AndroidStudio</strong>就够了。运行刚才的命令可能会报错，排错还是挺简单的根据提示的内容逐个解决就行了，在这里就不一一赘述。所有依赖成功安装后的提示信息如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[✓] Flutter (Channel stable, v1.5.4-hotfix.2, on Mac OS X 10.14.5 18F132, locale zh-Hans-CN)</span><br><span class="line">[✓] Android toolchain - develop for Android devices (Android SDK version 28.0.3)</span><br><span class="line">[✓] iOS toolchain - develop for iOS devices (Xcode 10.2.1)</span><br><span class="line">[✓] Android Studio (version 3.4)</span><br><span class="line">[✓] Connected device (1 available)</span><br></pre></td></tr></table></figure>
+<h1 id="4-新建安装Flutter项目"><a href="#4-新建安装Flutter项目" class="headerlink" title="4. 新建安装Flutter项目"></a>4. 新建安装Flutter项目</h1><p>在合适的文件夹运行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create flutter_app</span><br></pre></td></tr></table></figure>
+<p>就能创建一个名字为<strong>flutter_app</strong>的<strong>flutter</strong>项目，<br>这个时候我们插上手机打开<strong>USB</strong>调试或者打开<strong>iOS</strong>、<strong>Android</strong>模拟器运行以下命令行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter devices</span><br></pre></td></tr></table></figure>
+<p>如果到类似如下结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2 connected devices:</span><br><span class="line"></span><br><span class="line">Android SDK built for x86 • emulator-5554       • android-x86 • Android 9 (API 28) (emulator)</span><br><span class="line">iPhone Xs                 • 7E13B417 • ios      • com.apple.CoreSimulator.SimRuntime.iOS-12-2(simulator)</span><br></pre></td></tr></table></figure>
+<p>说明手机或者模拟器连接正常，如果没有设备请检查手机连接。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter run</span><br></pre></td></tr></table></figure>
+<p>最后我们通过命令行<strong>cd</strong>进入<strong>flutter_app</strong>文件夹，使用<strong>run</strong>命令就可以将<strong>flutter</strong>应用编译在<strong>Android</strong>或者<strong>iOS</strong>设备当中。</p>
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#主要步骤"><span class="toc-text">主要步骤</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-获取Flutter-SDK"><span class="toc-text">1. 获取Flutter SDK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-添加环境变量"><span class="toc-text">2. 添加环境变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-完成Flutter-依赖配置"><span class="toc-text">3. 完成Flutter 依赖配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-新建安装Flutter项目"><span class="toc-text">4. 新建安装Flutter项目</span></a>
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: fomav</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">https://blog.fomav.cn/2019/06/19/Flutter%E5%85%A5%E9%97%A8%E4%B9%8BMacOS-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/Flutter/"><i class="fa fa-tags"></i>Flutter</a>
+     
+      <a href="/tags/MacOS/"><i class="fa fa-tags"></i>MacOS</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+      
+<div class="site-comment-contanier" data-plateform="leancloud">
+  
+    <p id="site-comment-info">
+      <i class="fa fa-spinner fa-spin"></i> 评论加载中
+    </p>
+    <div id="site-comment"></div>
+  
+</div>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+       <!-- 
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Google</a>
+        </div>
+        -->
+        <input type="text" class="st-default-search-input" id="local-search-input" results="0">
+        <i class="fa fa-search"></i>
+      </div>
+      
+        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+          
+            <div>
+              <img src="/images/wechat.png" alt="WeChat">
+              
+                <p>WeChat</p>
+              
+            </div>
+          
+            <div>
+              <img src="/images/alipay.png" alt="AliPay">
+              
+                <p>AliPay</p>
+              
+            </div>
+          
+        </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+<!--搜索列表-->
+    <div data-v-357a65ed="" class="fav_list_box site-layer-body">
+        <div  class="my_fav_con" id="site_search">
+            <div id="local-search-result"></div>
+        </div>
+    </div>
+<!--搜索列表-->
+  </div>
+</div>
+
+
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/2019/06/21/Linux-%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3%E9%98%B2%E7%81%AB%E5%A2%99%E8%AE%BE%E7%BD%AE/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/2019/05/10/%E4%BF%AE%E5%A4%8DWindows-Linux-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E5%B7%AE/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+      <a href="#site-comment" data-enable="true">
+        <i class="fa fa-commenting"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+      <a href="javascript:void(0);" id="site-reward">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+  
+  
+  
+  
+</div>
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+  <script async>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '');
+  </script>
+
+
+
+  <script async>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+
+
+
+
+    
+      
+<script src="/js/fancybox.js"></script>
+
+    
+  </body>
+</html>

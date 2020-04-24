@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="fomav" />
+  
+  
+  <title>Hexo博客搭建以及爬坑过程 | 付梦威的个人博客</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Hexo,博客," />
+  
+
+  
+  <meta name="description" content="此篇博客讲述了我从构想搭建博客以及搭建过程中遇到的问题以及爬坑教程..一、构想和规划大概16年11月份时候，那个时候在找工作，平常的时候就写一些代码什么的，在网上翻录别人博客的时候心里就在想什么时候能有个自己私人的博客，这个想法越来越不可收拾，心里一想，那就搞呗。于是乎这篇博文就这样诞生了。大概前前后后历经3个月的时间吧，从服务器到域名，由于用的国内的域名以及DNS，免不了备案一番，其实真正花在这个时间也不多，总的算下来也就几天的时间。停摆一阵弄一阵，看到现在的多域名全站https的博客，回头过来不免感慨一番，现在想想还是挺有意思的一件事情。">
+
+  
+
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+    <script src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+  
+
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"P6FMULnoX3XK5edMk42DKgly-MdYXbMMI","appkey":"n2xKTKuwdQ5uQgP8L2FqjMKG","comment":true,"count":true},
+    welcome: {"enable":false,"interval":30},
+    start_time: "2019-04-24",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "fomav",
+    share: {"twitter":false,"facebook":false,"weibo":false,"qq":false,"wechat":false},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  
+<script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+
+  
+    
+<link rel="stylesheet" href="/css/myStyle.css">
+
+  
+<script src="http://code.jquery.com/jquery-3.4.1.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">fomav</a>
+      </span>
+    
+    
+      <span class="site-header-brand-motto"> | 万般皆下品，唯有代码高</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/friends/" target="_self">友链</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/fmwalways" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/friends/" target="_self">
+            友链
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2017-02-13
+    </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    Hexo博客搭建以及爬坑过程
+  </h1>
+  
+  <article class="passage-article">
+    <p><strong>二、服务器的选择</strong></p>
+<p>一开始选择服务器的时候自己没有想那么多，就想着省事能用就行，基于这样的想法就想着用国内的服务器就行了，后面的备案着实的坑了我一下。当时什么也不懂，觉得阿里的服务器挺好，加上新会员优惠活动，就入手了阿里的云服务器。入手之后就考虑域名的问题了，后来一想，既然搞了就搞一起吧，就在万网买了2个域名。</p>
+<p><strong>三、开始搭建博客</strong></p>
+<p>之前采用的方案是httpd + wordpress的方式搭建了一个博客，达不到想要的效果，现在采用的方式是nginx + Hexo 没有启动Hexo服务，仅仅把Hexo生成的静态目录文件部署到nginx目录当中，Windows上编辑markdown文件push到git仓库触发服务器上面的钩子达到自动同步编译的过程，这个后面会讲到。</p>
+<p>OK，Lest’s Begin~ 本次教程服务器系统环境为Centos6.5，客户端系统为Win10</p>
+<ul>
+<li>安装node.js</li>
+</ul>
+<p>此环境Windows也需安装部署</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<p>测试是否安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@iZuf6g6ve7f9a6w9suivvjZ ~]#node -v</span><br><span class="line">v4.7.2</span><br><span class="line">[root@iZuf6g6ve7f9a6w9suivvjZ ~]#npm -v</span><br><span class="line">2.15.11</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Windows部署Hexo环境</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成本地Hexo项目</p>
+</li>
+</ul>
+<p>在客户端新建Blog文件夹，初始化Hexo项目并安装拓展，检查是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>如果没有问题，可在客户端打开localhost:4000查看效果</p>
+<ul>
+<li>新建一篇文章<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;My First Post&quot;</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>在/source/_posts目录中生成了刚才文件名的md文件，我们写博客就编辑这个文件，写完了编译即可。</p>
+<ul>
+<li>提交代码托管</li>
+</ul>
+<p>因为GitHub私人项目需要收费，我使用的是国内的<a href="https://coding.net" target="_blank" rel="noopener">Coding.net</a>，新建一个Hexo项目，配置ssh公钥和私钥，使用SSH地址提交代码比较方便一些，服务器需要配置Git，Nignx，安装这两个比较容易，不再赘述。<br>将客户端Hexo目录提交到Git仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Git init</span><br><span class="line">Git remote add origin git@git.coding.net:fmwcn&#x2F;Hexo_Blog.git</span><br><span class="line">Git add .</span><br><span class="line">Git commit -m &quot;first commit&quot;</span><br><span class="line">Git push origin master</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>服务器拉取仓库代码</li>
+</ul>
+<p>服务器也需要配置ssh才能使用ssh地址，在这里我直接放进根目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir hexo</span><br><span class="line">git init</span><br><span class="line">git remote add origin git@git.coding.net:fmwcn&#x2F;Hexo_Blog.git</span><br><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Centos部署Hexo<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd ~&#x2F;hexo</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
+<li>Hexo静态编译<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>会在hexo目录中生成public目录，只需要将此目录放进nginx目录中就可以了</p>
+<ul>
+<li>GitWebHooks自动化部署</li>
+</ul>
+<p>现在的流程是，我们在客户端写好文件，登陆服务器git pull然后编译一下，如何完成我们的自动化部署呢？<br>Git仓库为我们提供了WebHooks来监控我们的仓库状态，这样我们可以设置当我们客户端Push的时候就会触发我们设定的事件。<br>实现WebHooks自动化部署的推荐条件：<br>服务器端配置ssh认证<br>服务器端配置nodejs服务，接收Coding发来的请求</p>
+<ul>
+<li>配置WebHooks</li>
+</ul>
+<p><img src="https://dev.tencent.com/u/fomav/p/Hexo_Res/git/raw/master/20170213211059.png" alt=""></p>
+<p>如图所示：当仓库发生push的时候，会发送一个http请求<a href="http://fomav.com:4002/webhooks/push/master" target="_blank" rel="noopener">http://fomav.com:4002/webhooks/push/master</a>，我们在服务器处理这个请求就可以了。</p>
+<p>在hexo目录中新建webhooks.js文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var http &#x3D; require(&#39;http&#39;)</span><br><span class="line">var exec &#x3D; require(&#39;child_process&#39;).exec</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line">&#x2F;&#x2F; 该路径与WebHooks中的路径部分需要完全匹配，实现简易的授权认证。</span><br><span class="line">if(req.url &#x3D;&#x3D;&#x3D; &#39;&#x2F;webhooks&#x2F;push&#x2F;master&#39;)&#123;</span><br><span class="line">&#x2F;&#x2F; 如果url匹配，表示认证通过，则执行 sh .&#x2F;deploy.sh</span><br><span class="line">exec(&#39;sh .&#x2F;deploy.sh&#39;)</span><br><span class="line">&#125;</span><br><span class="line">res.end()</span><br><span class="line">&#125;).listen(4002)</span><br></pre></td></tr></table></figure>
+<p>新建一个deploy.sh脚本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+
+<p>安装pm2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g pm2</span><br><span class="line">pm2 start webhooks.js</span><br></pre></td></tr></table></figure>
+
+<p>至此客户端push文章的时候服务器就会自动部署。</p>
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: fomav</div>
+      
+        <div>
+          原文链接: 
+          <a href="" target="_blank">https://blog.fomav.cn/2017/02/13/%E5%9F%BA%E4%BA%8EVps%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%BF%87%E7%A8%8B/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/Hexo/"><i class="fa fa-tags"></i>Hexo</a>
+     
+      <a href="/tags/%E5%8D%9A%E5%AE%A2/"><i class="fa fa-tags"></i>博客</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+      
+<div class="site-comment-contanier" data-plateform="leancloud">
+  
+    <p id="site-comment-info">
+      <i class="fa fa-spinner fa-spin"></i> 评论加载中
+    </p>
+    <div id="site-comment"></div>
+  
+</div>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+       <!-- 
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Google</a>
+        </div>
+        -->
+        <input type="text" class="st-default-search-input" id="local-search-input" results="0">
+        <i class="fa fa-search"></i>
+      </div>
+      
+        <div class="site-layer-reward" id="site-layer-reward" style="display: none;">
+          
+            <div>
+              <img src="/images/wechat.png" alt="WeChat">
+              
+                <p>WeChat</p>
+              
+            </div>
+          
+            <div>
+              <img src="/images/alipay.png" alt="AliPay">
+              
+                <p>AliPay</p>
+              
+            </div>
+          
+        </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+<!--搜索列表-->
+    <div data-v-357a65ed="" class="fav_list_box site-layer-body">
+        <div  class="my_fav_con" id="site_search">
+            <div id="local-search-result"></div>
+        </div>
+    </div>
+<!--搜索列表-->
+  </div>
+</div>
+
+
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="/2017/08/18/GitHub-pages-%E6%90%AD%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" data-enable="true">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="javascript:void(0);" data-enable="false">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+      <a href="#site-comment" data-enable="true">
+        <i class="fa fa-commenting"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+      <a href="javascript:void(0);" id="site-reward">
+        <i class="fa fa-thumbs-up"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+  
+  
+  
+  
+</div>
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+  <script async>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '');
+  </script>
+
+
+
+  <script async>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+
+
+
+
+    
+      
+<script src="/js/fancybox.js"></script>
+
+    
+  </body>
+</html>
